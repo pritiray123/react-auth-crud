@@ -15,7 +15,7 @@ export default function Dashboard(){
         navigate("/login");
     }
     useEffect(()=>{
-        fetch("http://localhost:5000/tasks/all")
+        fetch("https://react-auth-crud.onrender.com/tasks/all")
         .then(res=>res.json())
         .then(data=>{
         console.log(data)
@@ -31,7 +31,7 @@ export default function Dashboard(){
 
         if(editid!=null){
 
-            const res = await fetch(`http://localhost:5000/tasks/update/${editid}`,{
+            const res = await fetch(`https://react-auth-crud.onrender.com/tasks/update/${editid}`,{
                 method:"PUT",
                 headers:{
                     "Content-Type":"application/json"
@@ -52,7 +52,7 @@ export default function Dashboard(){
             seteditid(null)
             settask("")
         }else{
-        const res = await fetch("http://localhost:5000/tasks/create",{
+        const res = await fetch("https://react-auth-crud.onrender.com/tasks/create",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -68,7 +68,7 @@ export default function Dashboard(){
     }}
 
     const DeleteTask=async (id)=>{
-        await fetch(`http://localhost:5000/tasks/delete/${id}`,{
+        await fetch(`https://react-auth-crud.onrender.com/tasks/delete/${id}`,{
             method:"DELETE"
         })
         

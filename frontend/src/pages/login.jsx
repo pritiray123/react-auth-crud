@@ -13,7 +13,7 @@ export default function Login(){
     const Handlelogin = async (e)=>{
         e.preventDefault();
 
-        const res = await fetch("http://localhost:5000/api/auth/login",{
+        const res = await fetch("https://react-auth-crud.onrender.com/api/auth/login",{
                 method:"POST",
                 
                 headers:{
